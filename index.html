@@ -27,47 +27,44 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section>
-				<h1>Machine learning</h1>
-				<h3>overview</h3>
+			<section data-background="src/imgs/Machine-Learning.jpg">
 			</section>
-			<section style="font-size: 2.5vh;">
-				<h2>Questions:</h2>
+			<section style="font-size: 4vh; color: black;" data-background="src/imgs/questions.jpg">
+				<h2 style="color: black;">Questions:</h2>
 				<p class="fragment">What is machine learning?</p>
 				<p class="fragment">How is this method different from others?</p>
 				<p class="fragment">How do we train machines?</p>
 				<p class="fragment">How can we use machine learning?</p>
 				<p class="fragment">What to expect from machine learning in the future?</p>
 			</section>
-			<section style="font-size: 2.5vh">
-				<section>
-					<h1>What is machine learning?</h1>
-					<div class="fragment">
+			<section style="font-size: 4vh" data-background="src/imgs/whatis.jpeg">
+				<section >
+					<h3 style="color: black;">What is machine learning?</h3>
+					<div style="color: black;" class="fragment">
 						<p>Age of people?</p>
 						<div style="display: flex; justify-content: space-around;">
-							<img src="/src/imgs/geralt.jpg" width="300px" height="200px" alt=""> <img width="300px"
-								height="200px" src="/src/imgs/ilon.jpg" alt="">
+							<img width="330px"height="200px" src="src/imgs/ilon.jpg" alt="">
+							<img width="330px" height="200px" src="src/imgs/boy.jpg" alt="">
 						</div>
 					</div>
-					<div class="fragment">
+					<div style="color: black;" class="fragment">
 						<p>Cat or dog?</p>
 						<div style="display: flex; justify-content: space-around;">
-							<img width="300px" src="/src/imgs/cat.jpg" height="200px" alt=""><img width="300px"
-								height="200px" src="/src/imgs/dog.jpeg" alt="">
+							<img width="330px" src="src/imgs/cat.jpg" height="190px" alt=""><img width="330px"
+								height="190px" src="src/imgs/dog.jpeg" alt="">
 						</div>
 					</div>
 				</section>
-				<section>
+				<section data-background="src/imgs/background1.jpg">
 
 				</section>
 
 			</section>
 			<section>
-				<section>
+				<section data-background="src/imgs/original.jpg">
 					<h2>How do machines learn?</h2>
-					<img src="/src/imgs/original.jpg" alt="">
 				</section>
-				<section style="font-size: 2.5vh">
+				<section data-background="src/imgs/killers.jpg" style="font-size: 4vh">
 					<p>Imagine that our company sells killer-robots.</p>
 					<img src="/src/imgs/killer.jpg" width="300px" alt="">
 					<p>We want to understand what people think about us</p>
@@ -93,13 +90,11 @@
 						<div class="fragment" style = "width: 30vw;">
 							<p class="fragment highlight-green">Thank you very much! This is exactly what I was looking
 								for,
-								the quality is excellent! My neighbors will no longer bother me. The only negative is
-								that
-								he burned the floor of the area, with my house too.</p>
+								the quality is excellent! My neighbors will no longer bother me. The only negative is that
+								it burned the floor of the area, with my house too.</p>
 						</div>
 						<div class="fragment" style = "width: 30vw;">
-							<p class="fragment highlight-red">Awful quality! All the Gypsies of the camp were thrown off
-								to
+							<p class="fragment highlight-red">Terrible  quality! All the Gypsies of the camp were thrown off to
 								him, but he does not understand that we order him, I advise you to avoid this
 								manufacturer.
 								Money back and thanks for that!</p>
@@ -149,18 +144,44 @@
 					</div>
 					<div>
 						<p class="fragment">
-							Apply weights to our selectors:
+							Apply weight to our selectors:
 						</p>
 					</div>
 
 					<div style="display: flex; justify-content: space-around; font-size: 2vh;">
 						<div class="fragment">
-							<p>y = 3*(very) + 4*(thanks) + 5*(excellent) - 4*(negative) = 8</p>
+							<p>y = 3*(very) + 4*(thanks) + 5*(excellent) - 4*(negative) = 8 <span>positive</span></p>
 						</div>
 						<div class="fragment">
-							<p>y = 4*(Terrible) - 3*(avoid) - 4*(thanks) = -3</p>
+							<p>y = 4*(Terrible) - 3*(avoid) - 4*(thanks) = -3<span>negative</span> </p>
 						</div>
 					</div>
+				</section>
+				<section>
+					<h2>Loss function and </h2>
+					4*(Terrible) - 3*(avoid) - 4*(thanks)
+					<h3></h3>
+					<ul class="fragmernt">
+						<li>Simple</li>
+						<li>Quadratic</li>
+						<li>Rectangular</li>
+						<li>Exponential (loss function with saturation)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Learning algorithm(optimizer)</h2> 
+				</section>
+				<section>
+					<h2>Full algorithm</h2>
+					<ul>
+						<li class="fragment">Collect training data</li>
+						<li class="fragment">Create a bag of words(tags)</li>
+						<li class="fragment">Determine approximate weights for our tags</li>
+						<li class="fragment">Apply loss function</li>
+						<li class="fragment">Apply learning algorithm(optimizer)</li>
+						<li class="fragment">Repeat the last 2 steps until we get the desired accuracy.</li>
+						<li class="fragment">Apply the model on comments from social networks</li>
+					</ul>
 				</section>
 			</section>
 			<section>
@@ -172,7 +193,7 @@
 				</ol>
 			</section>
 			<section>
-				<h4>TApplication of machine learning:</h4>
+				<h4>Application of machine learning:</h4>
 				<ol>
 					<li>Transport: autopilots in cars</li>
 					<li>Health care: predicting patient diagnoses for doctors</li>

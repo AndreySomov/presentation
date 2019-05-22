@@ -187,3 +187,19 @@ module.exports = grunt => {
 	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
 
 };
+
+function findFirstUniqueLetter (str) {
+  for (let letter of str){
+  	if (str.indexOf(letter) === s.lastIndexOf(letter)) return letter;
+  }
+  return null
+ }
+
+let n = 0;
+const time = new Date();
+ while(n<10000){
+ 	const letter = findFirstUniqueLetter("sgdhfgasdfhgsdfhgdfjhsf");
+ 	n++;
+ }
+
+ console.log(new Date() - time);

@@ -1,116 +1,123 @@
 in preparation for this presentation, I tried to answer a few questions for myself
 
 What is machine learning?
-How is this method different from others?
 How do we train machines?
+How is this method different from others?
 How can we use machine learning?
 What to expect from machine learning in the future?
 
 1. What is machine learning?
 
-Мир полон задач, которые для нас, носителей естественного интеллекта, не представляют особых трудностей. Например, определить, кто изображен на фото кошка или собака? Какой возраст примерно имеет человек?
-Эти задачи имеют сложные неявные зависимости, в отличие от перевода минут в часы или расчета траектории полета метеорита, которые иногда имеют сложные, но очевидные зависимости.
 
+Look at these people, can you determine their age?
 
-Если мы хотим научить машину решать задачи, для которых формулы не существуют ни в одном учебнике мира, то мы не можем обойтись без машинного обучения.
-
-
-
-Машинное обучение предполагает, что компьютер распознает шаблоны, используя примеры, а не программируется с использованием определенных правил. Подразумвается, что все необходимые шаблоны и зависимости уже находятся в данных.
+Machine learning is one of the areas of artificial intelligence. The basic principle is that machine learning systems allow you to quickly apply the knowledge gained during 'learning' on large data sets and then, solve tasks that are natural intelligence carriers that are not difficult, such as face recognition, speech recognition, object recognition , translation, and many others, but represent a problem for algorithms based on a programmed set of rules. Currently it is the most promising business tool based on artificial intelligence.
 
 
 3. How do machines learn?
-Давайте на конкретном примере разберем как применить машинное обучение.
 
-представте, что наша компания продает роботов-убийц. У нас есть свой собственный сайт, где люди оставляют отзывы, но мы хотим понять, что люди пишут о нашем товаре в социальных сетях.
-Для этого нам нужно:
-1. Собрать данные для обучающей выборки: каждый комментарий мы обозначим как 'x' а его окрас как 'y'(положительный или отрицательный);
-2. Далее на нужно разработать нашу модель, котрую мы будем применять к нашим данным, назовем ее a(x), и обучить ее.
-3. Применить нашу модель для комментариев из социальных сетей, в которых нас упоминают.
 
-Чем более точные будут данные, тем эффективнее будет наш алгоритм a(x). 
-В нашем случаи в качестве обучающей выборки подойдут комментарии с нашего сайта, где пользователи помимо текста ставят еще и оценку нашему товару и сервису.
-Каждый комментарий пользователя мы будет обозначать за 'x' его тональность за 'y' (+(положительный) или -(отрицательный));
+Let's look at a example of how machine learning is applied in practice.
+Imagine that our company sells killer robots. 
+we also have a website where we sell our robots and get feedback
+We want to understand what people write about our product in social networks.
 
 
 
-
-Для примера возьмем 2 комментария с ярковыроженными тональностями.
-
-
-Thank you very much! This is exactly what I was looking for, the quality is excellent! My neighbors will no longer bother me. The only negative is that he burned the floor of the area, with my house too.
+First we need to get a training sample. In our case, it will be comments from our site, and users feedback. Each comment will be denoted as 'x' and a rating of this comment as 'y'
 
 
-Awful quality! All the Gypsies of the camp were thrown off to him, but he does not understand that we order him, I advise you to avoid this manufacturer. Money back and thanks for that!
+And we have our own website where people buy robots and leave feedback on their use. 
 
 
-
-Нам придется упростить задачу. Давайте с вами напишем, так называемый, мешок слов. Это 1000 наиболее важных по нашему мнению слов, способных охарактеризовать комментарий:
-
-
- 1. большое     (1, 0, 0, 0, 0, 0, ... 0)
- 2. спасибо     (0, 1, 0, 0, 0, 0, ... 0)
- 3. отличное    (0, 0, 1, 0, 0, 0, ... 0)
- 4. сломался    (0, 0, 0, 1, 0, 0, ... 0)
- 5. избегать    (0, 0, 0, 0, 1, 0, ... 0)
- 6. ужасное	(0, 0, 0, 0, 0, 1, ... 0)
- 5. ...
- 1000. минус    (0, 0, 0, 0, 0, 0, ... 1)
-
-Каждому слову будет соответствовать своя кодировка из 1000 чисел.
-Найдем все слова в тексте, сложим их кодировки, и получим кодировку нашего комментария состоящую так же из 1000 чисел
-
-Первый отзыв (1(большое), 1(спасибо), 1(отличное), 0, 0, 0, ... 1(минус)) 
-Второй отзыв (0, 1(спасибо), 0, 1(сломался), 1(избегать), 1(ужасное) ... 0))
-
-Затем нам необходимо применить веса к нашим селекторам: 
+For example, we'll take 2 comments with brightly-played tonalities from ours training sample.
 
 
-a(x) = 2*(большое) + 4*(спасибо) + 5*(отличное) - 3*(минус) =  8
+Thank you very much! This is exactly what I was looking for, the quality is excellent! My neighbors will no longer bother me. The only negative is that it burned the floor of the area, with my house too.
 
-a(x) = 2*(спасибо) - 5*(сломался) - 4*(избегать) - 5*(ужасное) = -10
+
+Terrible quality! All the Gypsies of the camp were thrown off to him, but he does not understand that we order him, I advise you to avoid this manufacturer. Money back and thanks for that!
 
 
 
-Отбрасываем число и берем знак получая + или - на выходе, это и будет характеризовать результат работы нашей модели как + или -.
+Hard to find a formula to solve this problem. So will have to simplify the task. Let's write with you a bag of words. This are the 1000 most important in our opinion words that can characterize the comment:
 
-Но откуда мы знаем что веса при наших селектора верные? Почему слово 'спасибо' равно по весу слову 'ужасный'. ВВзгляните на этот комментарий:
+ 1. very     (1, 0, 0, 0, 0, 0, ... 0)
+ 2. thanks    (0, 1, 0, 0, 0, 0, ... 0)
+ 3. excellent (0, 0, 1, 0, 0, 0, ... 0)
+ 4. avoid    (0, 0, 0, 0, 1, 0, ... 0)
+ 5. terrible    (0, 0, 0, 0, 0, 1, ... 0)
+ 6. ...
+ 1000. negative    (0, 0, 0, 0, 0, 0, ... 1)
 
-Мой старый тостер сломался, знакомый посоветовал этого производителя. Пользуюсь уже 2 месяца полет нормальный.
+Each word will have its own coding of 1000 numbers.
+Find all the words in the text, add their encodings, and get the encoding of our commentary consisting of 1000 numbers as well.
+
+First review (1 (great), 1 (thanks), 1 (excellent), 0, 0, 0, ... 1 (minus))
+Second review (0, 1 (thanks), 0, 1 (broke), 1 (avoid), 1 (terrible) ... 0))
 
 
-Здесь слово 'сломался' не имеет негативного окраса. А камментарий в целом нейтральный.
-
-Для того чтобы минимизировать процент ошибок в машинном обучении существуют функция потерь и оптимизатор.
-
-Функция потерь сравнит результат на выходе нашей модели с реальной оценкой пользователя и и результатом ее работы будет мера успеха в решении стоящей задачи. Важно понимать что не существует универсальной функции потерь, под каждую задачу нужно выбрать подходящую, или написать ее самому если задача специфическая.
-
-Аглоритм обучения(оптимизатор) определяет как именно будет меняется модель, на основании результата функции потерь. В нашем случаи мы будем менять веса наших селекторов.
-
-Так и происходит машинное обучение, мы прогоняем необходимые данные через нашу модель затем применяем функцию потерь и оптимизатор, до тех пор пока не получим необходимую нам точность на выходе модели.
-
-Далее мы можем достать комментарии из социальных сетей которые уже не имеют конкретную оценку пользователя, и применить нашу модель к ним.
-
-Типы машинного обучения:
-
-Supervised learning (обучение с учителем): В примере выше мы использовали данный подход. Мы подгоняем нашу модель так, чтобы ее результаты совпадали с результатами обучающей выборки.
-
-Unsupervised learning (обучение без учителя): Машина учится не по выбранным данным. Смысл в том, что среди данных нет «правильного» ответа, машина должна найти зависимость между объектами и разбить их на группы. В нашем примере мы бы сразу взяли комментарии из социальных сетей, прогнали через модель а на выходе получили бы группы комментариев с определенными признаками, затем нам бы нужно было сообщить модели какие из них относить к положительным, а какие к отрицательным.
-
-Reinforcement learning (обучение с подкреплением): Машина учится через систему на основе вознаграждения. Например при обучении алгоритма игры в шахмат. Когда он побеждает 
- мы относим это к желаемым события, а когда проигрывает наоборот. Это позволяет алгоритму понять какие паттерны успешные а какие нет.
-
-2. Применение машинного обучения:
+Then we need to apply weights to our selectors:
 
 
 
-Обзор того, где вы можете использовать машинное обучение:
+a (x) = 2*(very) + 4*(thanks) + 5*(excellent) - 3*(minus) = 8
 
-Транспорт: автопилоты в автомобилях.
-Здравоохранение: прогнозирование диагнозов пациентов для врачей
-Социальная сеть: прогнозирование совместимости знакомств
-Финансы: прогнозирование мошенничества с кредитными картами
-Электронная коммерция: прогнозирование оттока клиентов, рекомендации товаров
-Биология: поиск паттернов генных мутаций, которые могут вызвать рак
+a (x) = 4*(thanks) - 4*(avoid) - 5*(terrible) = -5
+
+
+
+
+We discard the number and take the sign to get + or - at the output, this will characterize the result of the work of our model as + or -.
+
+3.Loss function:
+
+But how do we know that weights are correct with our selector?
+
+
+for example: why does the word 'thanks' have a weight of 4 rather than 5?
+
+
+To determine how true the model is used a loss function.
+It will show us how much the result of our model applied to the comments differs from the real user rating.
+
+
+I will not delve into the mathematical aspects of the loss function, because we don't have much time.
+But it's important to consider that each task requires a suitable loss function. And for specific tasks you need to create your own loss function.
+
+
+The most popular loss functions:
+Simple
+Quadratic
+Rectangular
+Exponential(loss function with saturation)
+
+In our case we will use simple, and popular quadratic loss function.
+We will take the assessment of the comment that our model has given, and then compare it with the assessment that the user has set.Then we can get comments from social networks that no longer have a specific user rating, and apply our model to them.
+
+
+Types of machine learning:
+
+
+Supervised learning: In the example above, we used this approach. We customize our model so that its results coincide with the results of the training sample.
+
+
+Unsupervised learning: The machine does not learn from selected data. The point is that among the data there is no "correct" answer, the machine must find a relationship between the objects and divide them into groups. In our example, we would immediately take comments from social networks, drive through the model, and at the output we would receive groups of comments with certain signs, then we would need to tell the model which of them to be positive and which to negative.
+
+
+Reinforcement learning: The machine learns through a reward-based system.
+
+2.How is this method different from others?
+
+В отличие от программ с закодированными вручную инструкциями для выполнения конкретных задач, машинное обучение позволяет системе научиться самостоятельно распознавать шаблоны и делать прогнозы.
+
+3. Application of machine learning:
+
+Transport: autopilots in cars.
+Health care: predicting patient diagnoses for doctors
+Social Network: Dating Compatibility Prediction
+Finance: Credit Card Fraud Prediction
+E-commerce: forecasting customer churn, product recommendations
+Biology: search for patterns of gene mutations that can cause cancer
 
 
