@@ -1,5 +1,6 @@
 1 слайд
-Привет меня завут Андрей, и я бы хотел рассказать вам о машинном обучении.
+
+Hi, my name is Andrew, and I would like to tell you about machine learning.
 
 2 слайд
 in preparation for this presentation, I tried to answer a few questions for myself
@@ -14,46 +15,52 @@ What to expect from machine learning in the future?
 
 Look at these people, can you determine their age?
 
-А можете ли вы отличить кошку от собаки?
 
-Эти задачи не состовляют труда для носителей естественного интелекта. Но могут оказаться непосильными для алгоритмов, основанных на запрограммированном наборе правил.
-Вот тут нам и придет на помощь машинное обучение. Это одна из областей искусственного интеллекта. Основной ее принцип заключается в том, что машины получают данные и "обучаются" на них.
-В настоящее время это наиболее перспективный бизнес-инструмент, основанный на искусственном интеллекте.
+What is shown in these pictures? Where is the cat and where is the dog?
+
+Of course you can. These tasks are easy for carriers of natural intelligence. But it can be overwhelming for algorithms based on a programmed set of rules.
+This is where machine learning comes to our rescue. Machine learning one of the areas of artificial intelligence. Its main principle is that machines receive data and are “trained” on them.
+Currently, it is the most promising business tool based on artificial intelligence.
  
 
 
 3. How do machines learn?
 
 
-давайте на упрощенном примере попробуем понять как машинное обучение применяется на прктике
-Imagine that our company sells killer robots. 
+let's use a simplified example to try to understand how machine learning is used in practice
+Imagine that our company sells killer-robots. 
 we also have a website where we sell our robots and get feedback from users.
 We want to understand what people write about our product in social networks.
 
 
 4 слайд
 
-В первую очередь на понадобится обучающая выборка. Это информация с помощью которой мы будем обучать нашу алгоритм или другими словами модель;
-На эту роль идиально подойдут комментарии с нашего сайта, и оценки нашему товару, которые оставили пользователи.
-Каждый комментарий мы обозначим как 'x'. А оценку пользователя как 'y'.
-Here we have 2 examples.
+
+First of all, we'll need a training sample. This is the information on which our model will be trained.
+For this role, ideally suitable comments from our site, and evaluation of our product, which users have left.
+Each comment we denote as 'x'. And the rating given to our robots as 'y'.
+
+Let's look at 2 comments for example:
 
 
 Thank you very much! This is exactly what I was looking for, the quality is excellent! My neighbors will no longer bother me. The only negative is that it burned the floor of the area, with my house too.
 
-Комментарий выглядит неплохо для нас. Оценка пользователя составила 4 зведы.
 
-И другой комментарий:
+The commentary looks good for us. User Rating - 4 stars.
 
-Terrible quality! All the Gypsies of the camp were thrown off to him, but he does not understand that we order him, I advise you to avoid this manufacturer. Money back and thanks for that!
 
-Здесь все уже не так хорошо, оценка 2 звезды.
+And another comment:
+
+Terrible quality! It does not understand that we order it, I advise you to avoid this manufacturer. Money back and thanks for that!
+
+
+This one is not good for us, the user rating is 2 stars
 
 5 слайд
 
-Теперь насато время разработать нашу модель a(x);
-Наша задача сделать так, чтобы наша модель, примененная к нашим комментариям x, возвращаяла как можно более приблеженные результаты к 'y';
-Hard to find a formula to solve this problem. So will have to simplify the task. Let's write a bag of words. This are the 1000 most important in our opinion words that can characterize the comment:
+Now it is time to develop our model a (x);
+Our task is to make the model, which we apply to comments x, return as closely as possible results to 'y';
+Hard to find a formula to solve this problem. So we will have to simplify the task. Let's write a bag of words. This are the 1000 most important in our opinion words that can characterize the comment:
 
  1. very     (1, 0, 0, 0, 0, 0, ... 0)
  2. thanks    (0, 1, 0, 0, 0, 0, ... 0)
@@ -64,29 +71,29 @@ Hard to find a formula to solve this problem. So will have to simplify the task.
  1000. negative    (0, 0, 0, 0, 0, 0, ... 1)
 
 Each word will have its own coding of 1000 numbers.
-Затем мы должны эти слова в наших комментариях.
-Итак каждый комментарий будет характеризовать набор из 1000 чисел;
-затем мы должны применить веса к нашим тегам, и сложить все 1000 чисел;
-Эти веса приблизитиельные, но они уже отражают логику нашей модели.
-Слова спасибо и превосходно идут с плюсом, а слова ужасно и избегать идут с минусом.
-Но выходе нашей модели мы получаем либо положительное число ли отрицательное.
-Чем больше по модулю это число тем эмоциональный комментарий мы имеем.
+Then we need to find these words in our comments and add the received encodings.
+So each comment will characterize a set of 1000 numbers;
+then we have to apply weights to our tags, and add them.
+These weights are approximate, but they already reflect the logic of our model.
+Thank you words and they go great with plus, but words are terrible and avoided go with minus.
+But the output of our model, we get either a positive number or a negative.
+The greater the modulus of this number, the more emotional commentary we have.
 
 6 слайд
 
 3.Loss function:
 
-But how do we know that weights are correct with our selector?
+But how do we know that weights are correct with our selector? Why does the word 'thanks' have a weight of 4 rather than 5?
 
 
-for example: why does the word 'thanks' have a weight of 4 rather than 5?
+And do not forget that the words can be used sarcastically.
 
-И не стоит забывать, что слова могу использовать саркастически.
 
-например, спасибо за потраченое вермя и деньги. Ваш робот даже кофе не способен приготовить.
+For example: Thanks for the time spent and money. Your robot can't even make coffee.
 
-Для того, чтобы определить насколько эффективна модель, мы должны применить понять насколько эффективна наша модель с уже имеющимеся веса.
-В этом нам поможет функция потерь. Она показывает насколько результат работы нашей модели отклонился от ожидаемого.
+
+The loss function will help us determine how effective the model is.
+It shows how the result of the work of our model deviated from the expected.
 I will not delve into the mathematical aspects of the loss function, because we don't have much time.
 But it's important to consider that each task requires a suitable loss function. And for specific tasks you need to create your own loss function.
 
@@ -97,47 +104,62 @@ Quadratic
 Rectangular
 Exponential(loss function with saturation)
 
-In our case we will popular quadratic loss function. 
-
-7 слайд
 
 Обучающий алгоритм
 
 
+Then, based on the result of the loss function, we must change the weight in our model so that the losses are minimal. Changing the model to reduce losses is the main task of machine learning.
+
+
+
 8 слайд 
 
-Итак тестовые данные поступают в нашу модель, 
 
-Повторяя этот цикл, мы получим максимально точную модель, основанную на нешей обучающей выборке.
-
-А увеличивая обьем обьем нашей выборке и ее точноть, мы увеличим точность нашей модели.
-
-Теперь нам осталось только применить нашу модель к комментариям из социальнымх сетей в которых нас упоминают.
+So, the training data comes into our model, then the result of the model is estimated by the function of losses, and then using the training algorithm we improve our model. This cycle must be repeated until we obtain sufficient accuracy of the model.
+Increasing the volume of the training data and its accuracy, we will increase the accuracy of our model.
+Now we just have to apply our model to the comments from the social networks in which we are mentioned, and find out what people think about us.
 
 
 
 Types of machine learning:
 
 
-Supervised learning: In the example above, we used this approach. We customize our model so that its results coincide with the results of the training sample.
+Supervised learning: In the example above, we used this approach. We customize our model so that its results matched with the results of the training data.
 
 
-Unsupervised learning: The machine does not learn from selected data. The point is that among the data there is no "correct" answer, the machine must find a relationship between the objects and divide them into groups. In our example, we would immediately take comments from social networks, drive through the model, and at the output we would receive groups of comments with certain signs, then we would need to tell the model which of them to be positive and which to negative.
-
+Unsupervised learning: algorithms take a set of data that contains only inputs, and find structure in the data, like grouping or clustering of data points.
 
 Reinforcement learning: The machine learns through a reward-based system.
 
-2.How is this method different from others?
+2.How machine learning is different from other methods
 
 В отличие от программ с закодированными вручную инструкциями для выполнения конкретных задач, машинное обучение позволяет системе научиться самостоятельно распознавать шаблоны и делать прогнозы.
 
+Отличия от других методов:
+
+The model is already contained in the data
+
+
+
+Not necessarily understand the data we are analyzing.
+We can approximate complex dependencies and even models of systems without having the slightest idea how they work.
+
+
+Detect unexpected dependencies
+the model can find dependencies which we didn’t even suspect
+
 3. Application of machine learning:
 
-Transport: autopilots in cars.
+
+Application now:
+
+
 Health care: predicting patient diagnoses for doctors
-Social Network: Dating Compatibility Prediction
-Finance: Credit Card Fraud Prediction
-E-commerce: forecasting customer churn, product recommendations
+Social Network: Dating Site Compatibility Prediction
+Finance: Credit Card Fraud Forecasting
+E-commerce: customer churn prediction
 Biology: search for patterns of gene mutations that can cause cancer
 
+Application in future:
 
+Transport: autopilots in cars.
