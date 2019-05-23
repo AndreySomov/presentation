@@ -1,3 +1,7 @@
+1 слайд
+Привет меня завут Андрей, и я бы хотел рассказать вам о машинном обучении.
+
+2 слайд
 in preparation for this presentation, I tried to answer a few questions for myself
 
 What is machine learning?
@@ -6,41 +10,50 @@ How is this method different from others?
 How can we use machine learning?
 What to expect from machine learning in the future?
 
-1. What is machine learning?
-
+3 слайд
 
 Look at these people, can you determine their age?
 
-Machine learning is one of the areas of artificial intelligence. The basic principle is that machine learning systems allow you to quickly apply the knowledge gained during 'learning' on large data sets and then, solve tasks that are natural intelligence carriers that are not difficult, such as face recognition, speech recognition, object recognition , translation, and many others, but represent a problem for algorithms based on a programmed set of rules. Currently it is the most promising business tool based on artificial intelligence.
+А можете ли вы отличить кошку от собаки?
+
+Эти задачи не состовляют труда для носителей естественного интелекта. Но могут оказаться непосильными для алгоритмов, основанных на запрограммированном наборе правил.
+Вот тут нам и придет на помощь машинное обучение. Это одна из областей искусственного интеллекта. Основной ее принцип заключается в том, что машины получают данные и "обучаются" на них.
+В настоящее время это наиболее перспективный бизнес-инструмент, основанный на искусственном интеллекте.
+ 
 
 
 3. How do machines learn?
 
 
-Let's look at a example of how machine learning is applied in practice.
+давайте на упрощенном примере попробуем понять как машинное обучение применяется на прктике
 Imagine that our company sells killer robots. 
-we also have a website where we sell our robots and get feedback
+we also have a website where we sell our robots and get feedback from users.
 We want to understand what people write about our product in social networks.
 
 
+4 слайд
 
-First we need to get a training sample. In our case, it will be comments from our site, and users feedback. Each comment will be denoted as 'x' and a rating of this comment as 'y'
-
-
-And we have our own website where people buy robots and leave feedback on their use. 
-
-
-For example, we'll take 2 comments with brightly-played tonalities from ours training sample.
+В первую очередь на понадобится обучающая выборка. Это информация с помощью которой мы будем обучать нашу алгоритм или другими словами модель;
+На эту роль идиально подойдут комментарии с нашего сайта, и оценки нашему товару, которые оставили пользователи.
+Каждый комментарий мы обозначим как 'x'. А оценку пользователя как 'y'.
+Here we have 2 examples.
 
 
 Thank you very much! This is exactly what I was looking for, the quality is excellent! My neighbors will no longer bother me. The only negative is that it burned the floor of the area, with my house too.
 
+Комментарий выглядит неплохо для нас. Оценка пользователя составила 4 зведы.
+
+И другой комментарий:
 
 Terrible quality! All the Gypsies of the camp were thrown off to him, but he does not understand that we order him, I advise you to avoid this manufacturer. Money back and thanks for that!
 
+Здесь все уже не так хорошо, оценка 2 звезды.
 
+5 слайд
 
-Hard to find a formula to solve this problem. So will have to simplify the task. Let's write with you a bag of words. This are the 1000 most important in our opinion words that can characterize the comment:
+Теперь насато время разработать нашу модель a(x);
+Наша задача сделать так, чтобы наша модель, примененная к нашим комментариям x, возвращаяла как можно более приблеженные результаты к 'y';
+Hard to find a formula to solve this problem. So will have to simplify the task. Let's write a bag of words. This are the 1000 most important in our opinion words that can characterize the comment:
 
  1. very     (1, 0, 0, 0, 0, 0, ... 0)
  2. thanks    (0, 1, 0, 0, 0, 0, ... 0)
@@ -51,24 +64,15 @@ Hard to find a formula to solve this problem. So will have to simplify the task.
  1000. negative    (0, 0, 0, 0, 0, 0, ... 1)
 
 Each word will have its own coding of 1000 numbers.
-Find all the words in the text, add their encodings, and get the encoding of our commentary consisting of 1000 numbers as well.
+Затем мы должны эти слова в наших комментариях.
+Итак каждый комментарий будет характеризовать набор из 1000 чисел;
+затем мы должны применить веса к нашим тегам, и сложить все 1000 чисел;
+Эти веса приблизитиельные, но они уже отражают логику нашей модели.
+Слова спасибо и превосходно идут с плюсом, а слова ужасно и избегать идут с минусом.
+Но выходе нашей модели мы получаем либо положительное число ли отрицательное.
+Чем больше по модулю это число тем эмоциональный комментарий мы имеем.
 
-First review (1 (great), 1 (thanks), 1 (excellent), 0, 0, 0, ... 1 (minus))
-Second review (0, 1 (thanks), 0, 1 (broke), 1 (avoid), 1 (terrible) ... 0))
-
-
-Then we need to apply weights to our selectors:
-
-
-
-a (x) = 2*(very) + 4*(thanks) + 5*(excellent) - 3*(minus) = 8
-
-a (x) = 4*(thanks) - 4*(avoid) - 5*(terrible) = -5
-
-
-
-
-We discard the number and take the sign to get + or - at the output, this will characterize the result of the work of our model as + or -.
+6 слайд
 
 3.Loss function:
 
@@ -77,11 +81,12 @@ But how do we know that weights are correct with our selector?
 
 for example: why does the word 'thanks' have a weight of 4 rather than 5?
 
+И не стоит забывать, что слова могу использовать саркастически.
 
-To determine how true the model is used a loss function.
-It will show us how much the result of our model applied to the comments differs from the real user rating.
+например, спасибо за потраченое вермя и деньги. Ваш робот даже кофе не способен приготовить.
 
-
+Для того, чтобы определить насколько эффективна модель, мы должны применить понять насколько эффективна наша модель с уже имеющимеся веса.
+В этом нам поможет функция потерь. Она показывает насколько результат работы нашей модели отклонился от ожидаемого.
 I will not delve into the mathematical aspects of the loss function, because we don't have much time.
 But it's important to consider that each task requires a suitable loss function. And for specific tasks you need to create your own loss function.
 
@@ -92,8 +97,23 @@ Quadratic
 Rectangular
 Exponential(loss function with saturation)
 
-In our case we will use simple, and popular quadratic loss function.
-We will take the assessment of the comment that our model has given, and then compare it with the assessment that the user has set.Then we can get comments from social networks that no longer have a specific user rating, and apply our model to them.
+In our case we will popular quadratic loss function. 
+
+7 слайд
+
+Обучающий алгоритм
+
+
+8 слайд 
+
+Итак тестовые данные поступают в нашу модель, 
+
+Повторяя этот цикл, мы получим максимально точную модель, основанную на нешей обучающей выборке.
+
+А увеличивая обьем обьем нашей выборке и ее точноть, мы увеличим точность нашей модели.
+
+Теперь нам осталось только применить нашу модель к комментариям из социальнымх сетей в которых нас упоминают.
+
 
 
 Types of machine learning:

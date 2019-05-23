@@ -27,9 +27,9 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section data-background="src/imgs/Machine-Learning.jpg">
+			<section  data-background-height = '95%';  data-background="src/imgs/Machine-Learning.jpg">
 			</section>
-			<section style="font-size: 4vh; color: black;" data-background="src/imgs/questions.jpg">
+			<section style="font-size: 5vh; color: black; right: 10vw;" data-background="src/imgs/questions.jpg">
 				<h2 style="color: black;">Questions:</h2>
 				<p class="fragment">What is machine learning?</p>
 				<p class="fragment">How is this method different from others?</p>
@@ -65,23 +65,14 @@
 					<h2>How do machines learn?</h2>
 				</section>
 				<section data-background="src/imgs/killers.jpg" style="font-size: 4vh">
-					<p>Imagine that our company sells killer-robots.</p>
-					<img src="/src/imgs/killer.jpg" width="300px" alt="">
-					<p>We want to understand what people think about us</p>
-					<p>
-						<span>For this we need:</span>
-						<ol>
-							<li class="fragment fade-left">Collect data for the training sample: we denote each comment
-								as <strong>'x</strong> and its emotional color as <strong>'y'</strong>
-								<span style="color: green">positive</span> or <span style="color: red">negative</span>
-							</li>
-							<li class="fragment fade-left">Develop our model, which we will apply to our data, call it
-								'a
-								(x)', and train it.</li>
-							<li class="fragment fade-left">Apply our model to comments from social networks in which we
-								are mentioned.</li>
-						</ol>
-					</p>
+					<h3>Who we are?</h3>
+					<p>Imagine that we all are company that sells killer-robots.</p>
+					<h3>What we want?</h3>
+					<p>We want to know what peple thinking about us in social networks</p>
+				</section>
+
+				<section data-background="src/imgs/killers.jpg" style="font-size: 4vh">
+					<h3>Training sample</h3> 
 
 				</section>
 				<section>
@@ -172,16 +163,8 @@
 					<h2>Learning algorithm(optimizer)</h2> 
 				</section>
 				<section>
-					<h2>Full algorithm</h2>
-					<ul>
-						<li class="fragment">Collect training data</li>
-						<li class="fragment">Create a bag of words(tags)</li>
-						<li class="fragment">Determine approximate weights for our tags</li>
-						<li class="fragment">Apply loss function</li>
-						<li class="fragment">Apply learning algorithm(optimizer)</li>
-						<li class="fragment">Repeat the last 2 steps until we get the desired accuracy.</li>
-						<li class="fragment">Apply the model on comments from social networks</li>
-					</ul>
+					<h3>Machine learning</h3>
+					<img src="src/imgs/scheme.PNG" alt="">
 				</section>
 			</section>
 			<section>
