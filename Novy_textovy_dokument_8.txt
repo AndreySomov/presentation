@@ -1,3 +1,5 @@
+First of all, I would like to apologize for the fact that the presentation is not ready until the end
+
 1 слайд
 
 Hi, my name is Andrew, and I would like to tell you about machine learning.
@@ -13,10 +15,10 @@ What to expect from machine learning in the future?
 
 3 слайд
 
-Look at these people, can you determine their age?
+Look at these people, can you determine their age? 
 
 
-What is shown in these pictures? Where is the cat and where is the dog?
+What is shown in these pictures?
 
 Of course you can. These tasks are easy for carriers of natural intelligence. But it can be overwhelming for algorithms based on a programmed set of rules.
 This is where machine learning comes to our rescue. Machine learning one of the areas of artificial intelligence. Its main principle is that machines receive data and trains on it.
@@ -26,9 +28,9 @@ Currently, it is the most promising business tool based on artificial intelligen
 
 3. How do machines learn?
 
-
+ 
 let's use a simplified example to try to understand how machine learning is used in practice
-Imagine that our company sells killer-robots. 
+Imagine, we have a company sells killer-robots. 
 we also have a website where we get feedback from users.
 But we want to understand what people write about our product in social networks.
 
@@ -68,15 +70,15 @@ Hard to find a formula to solve this problem. So we will have to simplify the ta
  4. avoid    (0, 0, 0, 0, 1, 0, ... 0)
  5. terrible    (0, 0, 0, 0, 0, 1, ... 0)
  6. ...
- 1000. negative    (0, 0, 0, 0, 0, 0, ... 1)
+ 1000. negative    (0, 0, 0, 0, 0, 0, ... 1) 
 
 Each word will have its own coding of 1000 numbers.
-Then we need to find these words in our comments and add the received encodings.
-So each comment will characterize a set of 1000 numbers;
-then we have to apply weights to our tags, and add them.
+Then we need to find these words in our comments and add up the received encodings.
+So each comment will characterize a set of 1000 numbers; 
+then we have to apply weights to our tags, and add up them.
 These weights are approximate, but they already reflect the logic of our model.
-'Thank' and 'very' are going with plus, and 'terrible' and 'negative' with minus.
-At the output of our model, we get a positive or negative number.
+'Thank' and 'very' are going with plus, 'terrible' and 'negative' with minus.
+At the output of our model, we get a positive or negative number. 
 The more this number the more emotional the comment was on the input of our model
 
 6 слайд
@@ -92,7 +94,7 @@ And do not forget that the words can be used sarcastically.
 For example: Thanks for the time spent and money. Your robot can't even make coffee.
 
 
-The loss function will help us determine how effective the model is.
+The loss function will help us determine how effective the model is. 
 It shows how the result of the work of our model deviated from the expected.
 I will not delve into the mathematical aspects of the loss function, because we don't have much time.
 But it's important to consider that each task requires a suitable loss function. And for specific tasks you need to create your own loss function.
@@ -108,18 +110,18 @@ Exponential(loss function with saturation)
 
 Learning algorithm
 
+Then we need to apply Learning function with our model.
 
-
-the learning algorithm should, based on the result of the loss function, change the weights in our model so that the losses are minimal. Changing the model to reduce losses is the main task of machine learning.
+the learning function should based on the result of the loss function, change the weights in our model so that the losses are minimal. Changing the model to reduce losses is the main task of machine learning.
 
 
 
 8 слайд 
 
 
-So, the training data comes into our model, then the result of the model is estimated by the function of losses, and then using the training algorithm we improve our model. This cycle must be repeated until we obtain sufficient accuracy of the model.
+So, the training data comes into our model, then the result of the model is estimated by the loss function, and then using the training function we improve our model. This cycle must be repeated until we obtain sufficient accuracy of the model.
 Increasing the volume of the training data and its accuracy, we will increase the accuracy of our model.
-Now we just need to apply our model to the comments from the social networks in which we are mentioned, and find out what people think about us.
+Now we just need to apply our model to the comments from the social networks in which we are mentioned, and find out what people think about us. 
 
 
 
@@ -129,13 +131,12 @@ Types of machine learning:
 Supervised learning: In the example above, we used this approach. We customize our model so that its results matched with the results of the training data.
 
 
-Unsupervised learning: algorithms take a set of data that contains only inputs, and find structure in the data, like grouping or clustering of data points.
+Unsupervised learning: there is no right answer in the training data. algorithms take a set of data that contains only inputs, and find structure in the data, like grouping or clustering of data points.
 
 Reinforcement learning: The machine learns through a reward-based system.
 
 2.How machine learning is different from other methods
 
-В отличие от программ с закодированными вручную инструкциями для выполнения конкретных задач, машинное обучение позволяет системе научиться самостоятельно распознавать шаблоны и делать прогнозы.
 
 Differences from other methods:
 
@@ -147,7 +148,7 @@ Not necessarily understand the data we are analyzing.
 We can approximate complex dependencies and even models of systems without having the slightest idea how they work.
 
 
-Detect unexpected dependencies
+
 the model can find dependencies which we didn’t even suspect
 
 3. Application of machine learning:
