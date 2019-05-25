@@ -1,0 +1,28 @@
+i{
+    font-size: 16px;
+}
+
+.comment{
+    width: 450px;
+    height: 200px;
+    border: 2px solid white;
+    padding: 20px;
+    display: flex;
+    font-size: 20px;
+}
+
+.description{
+    width: 280px;
+    margin-left: 20px;
+}
+.count span,
+.count p{
+    margin: 0;
+    margin-top: -10px;
+    font-size: 25px;
+}
+
+.tasks{
+    font-size: 30px;
+    color: black;
+}

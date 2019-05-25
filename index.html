@@ -10,6 +10,9 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles.css">
 
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/monokai.css">
@@ -26,159 +29,255 @@
 
 <body>
 	<div class="reveal">
-		<div class="slides">
+		<div class="slides" style="font-family: Arial, Helvetica, sans-serif">
 			<section data-background="src/imgs/Machine-Learning.jpg">
 			</section>
-			<section style="font-size: 5vh; color: black; right: 10vw;" data-background="src/imgs/questions.jpg">
+			<section style="font-size: 35px; color: black; right: 10vw;" data-background="src/imgs/questions.jpg">
 				<h2 style="color: black;">Questions:</h2>
-				<p class="fragment">What is machine learning?</p>
-				<p class="fragment">How is this method different from others?</p>
-				<p class="fragment">How do we train machines?</p>
-				<p class="fragment">How can we use machine learning?</p>
-				<p class="fragment">What to expect from machine learning in the future?</p>
+				<div style="text-align: left; padding-left: 10vw;">
+					<p class="fragment">What is machine learning?</p>
+					<p class="fragment">How do we train machines?</p>
+					<p class="fragment">How is this method different from others?</p>
+					<p class="fragment">How can we use machine learning?</p>
+				</div>
 			</section>
-			<section data-background="src/imgs/whatis.jpeg">
-				<section >
-					<h4" style="color: black;">What is machine learning?</h4>
-					<div class="fragment">
-						<p>Age of people?</p>
-						<div style="display: flex; justify-content: space-around;">
-							<img width="330px"height="200px" src="src/imgs/ilon.jpg" alt="">
-							<img width="330px" height="200px" src="src/imgs/boy.jpg" alt="">
+			<section>
+				<section data-background="src/imgs/whatis.jpeg">
+					<h5" style="color: black;">What is machine learning?</h5>
+						<div style="display: flex; position: relative; right: 5vw;" class="fragment">
+							<div
+								style="display: flex; flex-direction: column; margin-right: 50px; justify-content: space-around;">
+								<p>Age of people?</p>
+								<img width="340px" height="200px" src="src/imgs/ilon.jpg" alt="">
+								<img width="340px" height="200px" src="src/imgs/boy.jpg" alt="">
+							</div>
+							<div style="color: black;" class="fragment">
+								<p>Hotdog or not hotdog?</p>
+								<div style="display: flex; flex-direction: column; justify-content: space-around;">
+									<img width="340px" src="src/imgs/hotdog.jpg" height="200px" alt=""><img
+										width="340px" height="200px" src="src/imgs/pizza.jpg" alt="">
+								</div>
+							</div>
 						</div>
-					</div>
-					<div style="color: black;" class="fragment">
-						<p>Cat or dog?</p>
-						<div style="display: flex; justify-content: space-around;">
-							<img width="330px" src="src/imgs/cat.jpg" height="190px" alt=""><img width="330px"
-								height="190px" src="src/imgs/dog.jpeg" alt="">
-						</div>
+				</section>
+				<section data-background="src/imgs/tasks.png">
+					<div class="tasks" style="position: relative; right: 15vw; color: white">
+						<h2>Main types of tasks</h2>
+						<ul style="font-size: 40px;">
+							<li class="fragment">Classification</li>
+							<li class="fragment">Regression</li>
+							<li class="fragment">Clustering</li>
+							<li class="fragment">Association</li>
+							<li class="fragment">Density recovery</li>
+							<li class="fragment">Revealing novelty</li>
+							<li class="fragment">Building rank dependencies</li>
+						</ul>
 					</div>
 				</section>
 			</section>
 			<section>
 				<section data-background="src/imgs/original.jpg">
-					<h2>How do machines learn?</h2>
+					<h2 style="position: relative; bottom: 25vh;">How do machines learn?</h2>
 				</section>
 				<section data-background="src/imgs/killers.jpg">
-					<p class="fragment" style="color: red">Imagine, we have a company that sells killer-robots.</p>
-					<p class="fragment" style="color: red">We want to know what peple thinking about us in social networks</p>
+					<div style="width: 600px; position: relative; left: 25vw; text-align: left; font-size: 40px;">
+						<p class="fragment">Company sells destroyer-robots.</p>
+						<p class="fragment">What peple thinking about us in social networks</p>
+					</div>
 				</section>
 
 				<section>
-					<h3>Training sample</h3> 
-					<p class='fragment'> Each comment = 'x', and his value = 'y'
+					<h3>Training sample</h3>
+					<div style="display: flex" class="fragment">
+						<div class="comment" style="margin-right: 50px;">
+							<div>
+								<i class="fas fa-star" style="color:yellow"></i><i class="fas fa-star"
+									style="color:yellow"></i><i class="fas fa-star" style="color:yellow"></i><i
+									class="fas fa-star" style="color:yellow"></i><i class="fas fa-star"></i><br>
+								<img src="src/imgs/user.jpg" height="100px" width="100px" alt="">
+							</div>
+							<div class="description" style="padding-top: 40px;">
+								<hr>
+								<hr>
+								<hr>
+								<hr>
+								<hr>
+								<hr>
+								<hr>
+							</div>
+						</div>
+
+						<div style="font-size: 0.8em;">
+							<p> 'x' - each comment</p>
+							<p> 'y' - product rating from user</p>
+						</div>
+					</div>
 				</section>
 				<section>
 					<h3>Comment examples</h3>
-					<div style="display: flex; justify-content: space-between; font-size: 2.5vh;">
-						<div class="fragment" style = "width: 30vw;">
-							<p class="fragment highlight-green">Thank you very much! This is exactly what I was looking
-								for,
-								the quality is excellent! My neighbors will no longer bother me. The only negative is that
-								it burned the floor of the area, with my house too.</p>
+					<div style="display: flex;">
+						<div class="comment fragment" style="margin-right: 50px;">
+							<div>
+								<i class="fas fa-star" style="color:yellow"></i><i class="fas fa-star"
+									style="color:yellow"></i><i class="fas fa-star" style="color:yellow"></i><i
+									class="fas fa-star" style="color:yellow"></i><i class="fas fa-star"></i><br>
+								<img src="src/imgs/neighbour.jpg" height="100px" width="100px" alt="">
+							</div>
+							<div class="description">
+								&ldquo;Thank you very much! This is exactly what I was looking for,
+								the quality is excellent! My neighbors will no longer bother me. The only negative: he
+								also destroyed the entire area, with my house too.&ldquo;
+							</div>
 						</div>
-						<div class="fragment" style = "width: 30vw;">
-							<p class="fragment highlight-red">Terrible  quality! It does not understand that I order him, I advise you to avoid this
+						<div class="comment fragment">
+							<div>
+								<i class="fas fa-star" style="color:yellow"></i><i class="fas fa-star"
+									style="color:yellow"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+									class="fas fa-star"></i><br>
+								<img src="src/imgs/pit.jpg" height="100px" width="100px" alt="">
+							</div>
+							<div class="description" style="padding-top: 30px;">
+								&ldquo;Terrible quality! It does not understand what I order him,
+								I advise you to avoid this
 								manufacturer.
-								Money back and thanks for that!</p>
+								Money back and thanks for that!&ldquo;
+							</div>
 						</div>
 					</div>
 				</section>
 
 				<section>
-					<h4>Model creation</h4>
 					<h5 class="fragment">Bag of words</h5>
-					<p class="fragment" >The 1000 most important words that can characterize the comment</p>
-
-					<ol class="fragment" style="list-style-type: none; font-size: 20px;">
-						<li>1. very (1, 0, 0, 0, 0, 0, ... 0)</li>
-						<li>2. thanks (0, 1, 0, 0, 0, 0, ... 0)</li>
-						<li>3. excellent (0, 0, 1, 0, 0, 0, ... 0)</li>
-						<li>4. broken (0, 0, 0, 1, 0, 0, ... 0)</li>
-						<li>5. avoid (0, 0, 0, 0, 1, 0, ... 0)</li>
-						<li>6. terrible (0, 0, 0, 0, 0, 1, ... 0)</li>
-						<li>...</li>
-						<li>1000. negative (0, 0, 0, 0, 0, 0, ... 1)</li>
-					</ol>
+					<div class="fragment" style="display: flex">
+						<div style="margin-right: 100px">
+							<ol style="list-style-type: none; font-size: 25px;">
+								<li>1. very (1, 0, 0, 0, 0, 0, ... 0)</li>
+								<li>2. thank (0, 1, 0, 0, 0, 0, ... 0)</li>
+								<li>3. excellent (0, 0, 1, 0, 0, 0, ... 0)</li>
+								<li>4. broken (0, 0, 0, 1, 0, 0, ... 0)</li>
+								<li>5. avoid (0, 0, 0, 0, 1, 0, ... 0)</li>
+								<li>6. terrible (0, 0, 0, 0, 0, 1, ... 0)</li>
+								<li>...</li>
+								<li>1000. negative (0, 0, 0, 0, 0, 0, ... 1)</li>
+							</ol>
+						</div>
+						<img src="src/imgs/bagofwords.jpg" width="400px" height="300px" style="margin-top: 0;" alt="">
+					</div>
 				</section>
 
 				<section>
-					<h3>Comments</h3>
-					<div style="display: flex; justify-content: space-around; font-size: 2.5vh;">
+					<div style="display: flex; justify-content: space-around; font-size: 30px;">
 						<div style="margin-right: 50px; width: 35vw;">
-							<p> <span style="color: green">Thank</span> you <span style="color: green">very</span> much!
-								This is exactly what I was looking for,
-								the quality is <span style="color: green">excellent!</span> My neighbors will no longer
-								bother me. The only <span style="color: red">negative</span> is
-								that he burned the floor of the area, with my house too.
-							</p>
-							<p class="fragment">(1, 1, 1, 0, 0, 0, ... 1)</p>
+							<div>
+								<p> &ldquo;<span style="color: green">Thank</span> you <span
+										style="color: green">very</span>
+									much!
+									This is exactly what I was looking for,
+									the quality is <span style="color: green">excellent!</span> My neighbors will no
+									longer
+									bother me. The only <span style="color: red">negative</span> is
+									that he burned the floor of the area, with my house too.&ldquo;
+								</p>
+							</div>
+							<div class="fragment count" style="text-align: center;">
+								<p>(0, 1, 0, 0, 0, 0, ... 0) Thank</p>
+								<span>+</span>
+								<p>(1, 0, 0, 0, 0, 0, ... 0) very</p>
+								<span>+</span>
+								<p>(0, 0, 1, 0, 0, 0, ... 0) excellent</p>
+								<span>+</span>
+								<p>(0, 0, 0, 0, 0, 0, ... 1) negative</p>
+								<span>=</span>
+								<p>(1, 1, 1, 0, 0, 0, ... 1)</p>
+							</div>
 						</div>
 						<div style="width: 35vw;">
-							<p> <span style="color: red">Terrible</span> quality!It does not understand that I  	order him! I advise you to <span style="color: red">avoid</span> 
-								this manufacturer. Money back and <span style="color: green">thanks</span> for that!
-							</p>
-							<p class="fragment">
-								(0, 1, 0, 0, 1, 1, ... 0)
-							</p>
+							<div style="margin-bottom: 60px;">
+								<p> &ldquo;<span style="color: red">Terrible</span> quality!It does not understand what
+									I order
+									him! I advise you to <span style="color: red">avoid</span>
+									this manufacturer. <span style="color: green">Thank</span> you for refund money at
+									least!&ldquo;
+								</p>
+							</div>
+							<div class="fragment count" style="text-align: center;">
+								<p>(0, 0, 0, 0, 0, 1, ... 0) Terrible</p>
+								<span>+</span>
+								<p>(0, 0, 0, 0, 1, 0, ... 0) avoid</p>
+								<span>+</span>
+								<p>(0, 1, 0, 0, 0, 0, ... 0) Thank</p>
+								<span>=</span>
+								<p>(0, 1, 0, 0, 1, 1, ... 0)</p>
+							</div>
 						</div>
 					</div>
-					<div>
-						<p class="fragment">
-							Apply weight to our selectors:
-						</p>
-					</div>
+				</section>
 
-					<div style="display: flex; justify-content: space-around; font-size: 2vh;">
-						<div class="fragment">
-							<p>y = 3*(very) + 4*(thanks) + 5*(excellent) - 4*(negative) = <span style="color: green;">8</span></p>
+				<section>
+					<h3>Apply weight to our selectors</h3>
+					<div style="font-size: 30px;">
+						<div class="fragment fade-left">
+							<p>y = 3*(very) + 4*(thanks) + 5*(excellent) - 4*(negative) = <span
+									style="color: green;">8</span></p>
 						</div>
-						<div class="fragment">
+						<div class="fragment fade-right">
 							<p>y = 4*(Terrible) - 3*(avoid) - 4*(thanks) = <span style="color: red;">-3</span> </p>
 						</div>
 					</div>
 				</section>
 				<section>
-					<div style="display: flex; justify-content: center; font-size: 30px">
-						<div>
-							<h2>Loss function</h2>
-							<p class="fragment">4*(Terrible) - 3*(avoid) - 4*(thanks)</p> 
-							<h3 class="fragment">Loss function types:</h3>
-							<ul>
-								<li class="fragment">Simple</li>
-								<li class="fragment">Quadratic</li>
-								<li class="fragment">Rectangular</li>
-								<li class="fragment">Exponential (loss function with saturation)</li>
-							</ul>
+					<section>
+						<div style="display: flex; justify-content: space-between; font-size: 30px; padding-top: 150px;">
+							<div>
+								<h2>Loss function</h2>
+								<ul>
+									<li class="fragment fade-right">Simple</li>
+									<li class="fragment fade-right">Quadratic</li>
+									<li class="fragment fade-right">Rectangular</li>
+									<li class="fragment fade-right">Exponential</li>
+								</ul>
+							</div>
+							<i class="fas fa-arrow-right fragment" style="font-size: 50px; position: relative; top: 50px;"></i>
+							<div class="fragment fade-left" style="display: flex; flex-direction: column; align-items: center; font-size: 30px;">
+								<h2 class="Learning-function">Learning function</h2>
+								<ul class="fragment">
+									<li>Stohastic gradient descent</li>
+									<li>Alternating Least Square</li>
+									<li>Nesterov Accelerated Gradient</li>
+									<li>Adagrad</li>
+									<li>RMSProp</li>
+									<li>Adadelta</li>
+									<li>Adam</li>
+									<li>Adamax</li>
+								</ul>
+							</div>
 						</div>
-
-						<div style="display: flex; align-items: center;">
-							<h2 class="fragment">Learning function</h2>
-						</div>
-					</div>
+					</section>
 				</section>
 				<section>
 					<h3>Machine learning</h3>
-					<img src="src/imgs/scheme.PNG" alt="">
+					<img src="src/imgs/scheme.PNG" style="border: none" width="800px" height="550px;" alt="">
 				</section>
 			</section>
 			<section data-background="src/imgs/types.jpg">
-				<div class="fragment" style="position: relative; left: 20vw; color: black;">
+				<div class="fragment" style="position: relative; left: 10vw; color: black;">
 					<h4 style="color: black;">Types of machine learning:</h4>
-					<ol>
+					<ol style="font-size: 30px">
 						<li class="fragment">Supervised learning</li>
 						<li class="fragment">Unsupervised learning</li>
 						<li class="fragment">Reinforcement learning</li>
+						<li class="fragment">Ensemble methods</li>
+						<li class="fragment">Neural networks and deep learning</li>
 					</ol>
 				</div>
 			</section>
-				<section data-background="src/imgs/start.jpg">
+			<section data-background="src/imgs/start.jpg">
 				<div class="fragment" style="position: relative; left: -15vw;">
 					<h4>Features of machine learning</h4>
-					<ol style="position: relative; left: 5vw">
-						<li class="fragment">The model is already contained in the data</li>
-						<li class="fragment">Not necessarily understand the data we are analyzing.</li>
+					<ol style="font-size: 27px;">
+						<li style="margin-bottom: 10px" class="fragment">The model is already contained in the data
+						</li>
+						<li style="margin-bottom: 10px" class="fragment">Not necessarily understand the data</li>
 						<li class="fragment">Detect unexpected dependencies</li>
 					</ol>
 				</div>
@@ -186,26 +285,32 @@
 			<section data-background="src/imgs/city.jpg">
 				<h4>Application of machine learning</h4>
 				<div style="font-size: 30px; display: flex; justify-content: space-around;">
-					<div>
-					<h5 class="fragment">Application now:</h5> 
-					<ul>
-						<li class="fragment">Health care</li>
-						<li class="fragment">Social Network</li>
-						<li class="fragment">Finance</li>
-						<li class="fragment">E-commerce</li>
-						<li class="fragment">Biology</li>
-					</ul>
+					<div style="display: flex; font-size: 35px;">
+						<div style="margin-right: 60px;">
+							<ul style="text-align: left">
+								<li class="fragment">Speech recognition</li>
+								<li class="fragment">Handwriting recognition</li>
+								<li class="fragment">Pattern recognition</li>
+								<li class="fragment">Technical diagnostics</li>
+								<li class="fragment">Medical Diagnostics</li>
+								<li class="fragment">Fraud Detection</li>
+
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<li class="fragment">Spam detection</li>
+								<li class="fragment">Document categorization</li>
+								<li class="fragment">Stock technical analysis</li>
+								<li class="fragment">Financial supervision</li>
+								<li class="fragment">Credit scoring</li>
+								<li class="fragment">Predicting customer care</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 
-				<div>
-					<h5 class="fragment">Application in future:</h5>
-					<ul>
-						<li class="fragment">Transport</li>
-					</ul>
-				</div>
-				</div>
-				
-				
+
 			</section>
 			<section data-background="src/imgs/term.jpg">
 				<h2>Thanks for watching!</h2>
