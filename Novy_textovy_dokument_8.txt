@@ -11,12 +11,12 @@ How can we use machine learning?
 
 Look at these people, can you determine their age?
 
-What is shown in these pictures cat or dog?
+What is shown in these pictures hotdog or not hotdog?
 
 These tasks are easy for carriers of natural intelligence. But it can be overwhelming for algorithms based on a programmed set of rules.
 This is where machine learning comes to our rescue. 
 
-Many people think they can compare the machine learning and neural networks, but this is not true.
+Many people think that they can compare the machine learning and neural networks, but this is not true.
 Machine learning is one of the areas of artificial intelligence. Neural networks is a type of machine learning, popular, but there are others as well.
 The main principle of machine learning is that machines receive data and trains on it.
 Currently, it is the most promising business tool based on artificial intelligence.
@@ -27,7 +27,9 @@ Classification
 Regression
 Clustering
 Association
-Dimension reduction
+Density recovery
+Revealing novelty
+Building rank dependencies
  
 2. How do machines learn?
 
@@ -53,8 +55,8 @@ Terrible quality! It does not understand my orders, I advise you to avoid this m
 
 This one is not good for us, the user have left 2 stars (y).
 
-Now it is time to develop our model.
-Our task is to make the model, which will be applid to comments x, and will return close as much as possible results to 'y';
+Now it is time to develop our model. we'll call it a(x);
+Our task is to make the model, which will be applid to comments, and will return close as much as possible results to 'y';
 Hard to find a formula to solve this problem. So we will have to simplify the task. Let's write a bag of words. This are the 1000 most important in our opinion words that can characterize the comment:
 
  1. very     (1, 0, 0, 0, 0, 0, ... 0)
@@ -66,7 +68,7 @@ Hard to find a formula to solve this problem. So we will have to simplify the ta
  1000. negative    (0, 0, 0, 0, 0, 0, ... 1) 
 
 Each word will have its own coding of 1000 numbers.Then we need to find these words in our comments and summarize the received encodings.
-So each comment will characterize a set of 1000 numbers.
+So each comment will characterized by a set of 1000 numbers.
 Then we should apply weights to our tags, and summarize them.
 These weights are approximate, but they already reflect the logic of our model.
 'Thank' and 'very' are going with plus, 'terrible' and 'negative' with minus.
@@ -77,43 +79,44 @@ Loss function:
 
 But how do we know that weights with our tags are correct? Why does the word 'thanks' have a weight of 4 rather than 5?
 
-The answer is, we do not know. The function will help us adjust the weight of the selectors correctly. 
+The answer is, we do not know. 
+But we can use loss function.It will help us adjust the weight of the selectors correctly. 
 It shows how the result of the work of our model deviated from the expected, and help us determine how effective the model is.
 I will not delve into the mathematical aspects of the loss function, because we don't have much time.
-But it's important to consider that each task requires a suitable loss function. And for specific tasks you need to create your own loss function.
+But it's important to consider that each task requires a suitable loss function. And for specific task you need to create your own loss function.
 
 The most popular loss functions:
 Simple
 Quadratic
 Rectangular
-Exponential(loss function with saturation)
+Exponential
 
 
 
 Then we need apply learning function with our model.
+  
 
 
-
-The learning function should based on the result of the loss function, change the weights of tags in our model so that the model losses are minimal. Changing the model to reduce losses is the main task of machine learning.
-There are many loss functions. Each one fits better in a specific situation, as well as a loss function. Unfortunately we do not have time to look at them.
+The learning function should based on the result of the loss function, and change the weights of tags in our model. The main task of the learning function is to reduce the loss of our model.
+There are many learning functions. Each one fits better in a specific situation, as well as a loss function. Unfortunately we do not have time to look at them.
 
 So, the training data comes into our model, then the result of the model is estimated by the loss function, and then using the learning function we improve our model. This cycle must be repeated until we obtain sufficient accuracy of the model.
-Increasing the volume of the training data and its accuracy, we will increase the  accuracy of our model.
+Increasing the size of the training data and its accuracy, we will increase the  accuracy of our model.
 Now we just need to apply our model to the comments from the social networks and find out what people think about us. 
 
 Types of machine learning:
 
-Supervised learning: In the example above, we used this approach. We customize our model so that its results matched with the results of the training data.
+Supervised learning: In the example above, we used this approach. We customize our model so its result matched with the result of the training data.!!!
  
-Unsupervised learning: there is no right answer in the training data. algorithms take a set of data that contains only inputs, and find structure in the data, like grouping or clustering of data points.
+Unsupervised learning: In this case there is no right answer in the training data. Model take a set of data that contains only inputs, and find structure in the data, like grouping or clustering of data points.
 
 Reinforcement learning: The machine learns through a reward-based system.
 
 Ensemble methods
 
-Neural networks and deep learning
+Neural networks and deep learning 
 
-3. How does this method differ from others?
+3. How does the machine learning differ from other methods?
 
 The model is already contained in the data
 
