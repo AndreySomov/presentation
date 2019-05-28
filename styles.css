@@ -2,6 +2,11 @@ i{
     font-size: 16px;
 }
 
+a, a:visited, a:active {
+     color: inherit;
+     text-decoration: none;
+}
+
 .comment{
     width: 450px;
     height: 200px;
@@ -25,4 +30,16 @@ i{
 .tasks{
     font-size: 30px;
     color: black;
+}
+
+.reveal  h1,
+.reveal  h2,
+.reveal  h3,
+.reveal  h4,
+.reveal  h5,
+.reveal  h6 {
+  font-weight: normal;
+  font-family: 'Futura-Normal', arial;
+  text-shadow: 4px 4px 4px #aaa;
+  letter-spacing: 5px;
 }

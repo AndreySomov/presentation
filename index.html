@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
 		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link rel="stylesheet" href="styles.css">
+	<link href="http://allfont.ru/allfont.css?fonts=futura-normal" rel="stylesheet" type="text/css" />
 
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/monokai.css">
@@ -32,9 +33,9 @@
 		<div class="slides" style="font-family: Arial, Helvetica, sans-serif">
 			<section data-background="src/imgs/Machine-Learning.jpg">
 			</section>
-			<section style="font-size: 35px; color: black; right: 10vw;" data-background="src/imgs/questions.jpg">
-				<h2 style="color: black;">Questions:</h2>
-				<div style="text-align: left; padding-left: 10vw;">
+			<section data-background="src/imgs/questions.jpg">
+				<h3  class="shadow" style="color: black;">Questions:</h3>
+				<div style="text-align: left; padding-left: 10vw; color: black; right: 15vw;">
 					<p class="fragment">What is machine learning?</p>
 					<p class="fragment">How do we train machines?</p>
 					<p class="fragment">How is this method different from others?</p>
@@ -63,7 +64,7 @@
 				<section data-background="src/imgs/tasks.png">
 					<div class="tasks" style="position: relative; right: 15vw; color: white">
 						<h2>Main types of tasks</h2>
-						<ul style="font-size: 40px;">
+						<ul>
 							<li class="fragment">Classification</li>
 							<li class="fragment">Regression</li>
 							<li class="fragment">Clustering</li>
@@ -80,7 +81,7 @@
 					<h2 style="position: relative; right: 7vw; bottom: 22vh;">How do machines learn?</h2>
 				</section>
 				<section data-background="src/imgs/killers.jpg">
-					<div style="width: 600px; position: relative; left: 25vw; text-align: left; font-size: 40px;">
+					<div style="width: 600px; position: relative; left: 25vw; text-align: left;">
 						<p class="fragment">Company sells destroyer-robots.</p>
 						<p class="fragment">What peple thinking about us in social networks</p>
 					</div>
@@ -107,7 +108,7 @@
 							</div>
 						</div>
 
-						<div style="font-size: 0.8em;">
+						<div>
 							<p> 'x' - each comment</p>
 							<p> 'y' - product rating from user</p>
 						</div>
@@ -142,11 +143,11 @@
 				</section>
 
 				<section>
-					<span>Model a(x)</span>
+					<h2>Model</h2> 
 					<h5 class="fragment">Bag of words</h5>
 					<div class="fragment" style="display: flex">
 						<div style="margin-right: 100px">
-							<ol style="list-style-type: none; font-size: 25px;">
+							<ol style="list-style-type: none;">
 								<li>1. very        (1, 0, 0, 0, 0, ... 0)</li>
 								<li>2. thank       (0, 1, 0, 0, 0, ... 0)</li>
 								<li>3. excellent   (0, 0, 1, 0, 0, ... 0)</li>
@@ -161,7 +162,7 @@
 				</section>
 
 				<section>
-					<div style="display: flex; position: relative; right: 8vw; justify-content: space-around; font-size: 30px;">
+					<div style="display: flex; position: relative; right: 8vw; justify-content: space-around;">
 						<div style="margin-right: 50px; width: 35vw;">
 							<div>
 								<p> &ldquo;<span style="color: green">Thank</span> you <span
@@ -208,7 +209,7 @@
 				</section>
 				<section>
 					<h3>Apply weight to our selectors</h3>
-					<div style="font-size: 30px;">
+					<div>
 						<div class="fragment fade-left">
 							<p>y = 3*(very) + 4*(thanks) + 5*(excellent) - 4*(negative) = <span
 									style="color: green;">8</span></p>
@@ -220,7 +221,7 @@
 				</section>
 				<section>
 					<section>
-						<div style="display: flex; justify-content: space-between; position: relative; right: 8vw; font-size: 30px; padding-top: 150px;">
+						<div style="display: flex; justify-content: space-between; position: relative; right: 8vw; padding-top: 150px;">
 							<div>
 								<h2>Loss function</h2>
 								<ul>
@@ -230,8 +231,8 @@
 									<li class="fragment fade-right">Exponential</li>
 								</ul>
 							</div>
-							<i class="fas fa-arrow-right fragment" style="font-size: 50px; position: relative; top: 50px;"></i>
-							<div class="fragment fade-left" style="display: flex; flex-direction: column; align-items: center; font-size: 30px;">
+							<i class="fas fa-arrow-right fragment" style="position: relative; top: 50px;"></i>
+							<div class="fragment fade-left" style="display: flex; flex-direction: column; align-items: center;">
 								<h2 class="Learning-function">Learning function</h2>
 								<ul class="fragment">
 									<li>Stohastic gradient descent</li>
@@ -254,8 +255,8 @@
 			</section>
 			<section data-background="src/imgs/types.jpg">
 				<div style="position: relative; left: 10vw; top: 5vh; color: black;">
-					<h4 style="color: black;">Types of machine learning:</h4>
-					<ol style="font-size: 30px">
+					<h2 style="color: black;">Types of machine learning:</h2>
+					<ol>
 						<li class="fragment">Supervised learning</li>
 						<li class="fragment">Unsupervised learning</li>
 						<li class="fragment">Reinforcement learning</li>
@@ -267,7 +268,7 @@
 			<section data-background="src/imgs/start.jpg">
 				<div style="position: relative; left: -15vw;">
 					<h4>Features of machine learning</h4>
-					<ol style="font-size: 27px;">
+					<ol>
 						<li style="margin-bottom: 10px" class="fragment">The model is already contained in the data
 						</li>
 						<li style="margin-bottom: 10px" class="fragment">Not necessarily understand the data</li>
@@ -276,9 +277,9 @@
 				</div>
 			</section>
 			<section data-background="src/imgs/city.jpg">
-				<h4>Application of machine learning</h4>
-				<div style="font-size: 30px; display: flex; justify-content: space-around;">
-					<div style="display: flex; font-size: 35px;">
+				<h2>Application of machine learning</h2>
+				<div style="display: flex; justify-content: space-around;">
+					<div style="display: flex;">
 						<div style="margin-right: 60px;">
 							<ul style="text-align: left">
 								<li class="fragment">Speech, handwriting and pattern recognition</li>
@@ -298,6 +299,25 @@
 						</div>
 					</div>
 				</div>
+			</section>
+			<section data-background="src/imgs/reading.jpg">
+				<div style="color: black;">
+					<h2 style="color: black; position: relative; right: 20vw; display: flex; flex-direction: column; align-items: left;">Useful links</h2>
+					<ul style="display: block;">
+						<li>
+							<a href="https://techdevguide.withgoogle.com/paths/machine-learning/featured/ml-crash-course">
+							<span>Guide</span>	
+							</a> 
+						</li>
+						<li>
+							<a href="https://vas3k.ru/blog/machine_learning/"><span>Article</span></a>
+						</li>
+						<li>
+							<a href=""><span>Video</span></a>
+						</li>
+					</ul>
+				</div>
+				
 			</section>
 			<section data-background="src/imgs/term.jpg">
 				<h2>Thanks for watching!</h2>
