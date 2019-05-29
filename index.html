@@ -34,20 +34,21 @@
 			<section data-background="src/imgs/Machine-Learning.jpg">
 			</section>
 			<section data-background="src/imgs/questions.jpg">
-				<h3  class="shadow" style="color: black;">Questions:</h3>
-				<div style="text-align: left; padding-left: 10vw; color: black; right: 15vw;">
-					<p class="fragment">What is machine learning?</p>
-					<p class="fragment">How do we train machines?</p>
-					<p class="fragment">How is this method different from others?</p>
-					<p class="fragment">How can we use machine learning?</p>
+				<div style="display: flex; flex-direction: column; align-items: left; color: black; right: 25vw;">
+					<h3 class="shadow" style="color: black; position: relative; right: 8vw;">Questions:</h3>
+					<ul style="display: block">
+						<p class="fragment">What is machine learning?</p>
+						<p class="fragment">How do we train machines?</p>
+						<p class="fragment">How is this method different from others?</p>
+						<p class="fragment">How can we use machine learning?</p>
+					</ul>
 				</div>
 			</section>
 			<section>
 				<section data-background="src/imgs/whatis.jpeg">
-					<h5" style="color: black;">What is machine learning?</h5>
-						<div style="display: flex; position: relative; right: 5vw;" class="fragment">
-							<div
-								style="display: flex; flex-direction: column; margin-right: 50px; justify-content: space-around;">
+					<h3 style="color: black;">What is machine learning?</h3>
+						<div style="display: flex; position: relative; right: 5vw; color: black" class="fragment">
+							<div style="display: flex; flex-direction: column; margin-right: 50px; justify-content: space-around;">
 								<p>Age of people?</p>
 								<img width="340px" height="200px" src="src/imgs/ilon.jpg" alt="">
 								<img width="340px" height="200px" src="src/imgs/boy.jpg" alt="">
@@ -62,7 +63,7 @@
 						</div>
 				</section>
 				<section data-background="src/imgs/tasks.png">
-					<div class="tasks" style="position: relative; right: 15vw; color: white">
+					<div class="tasks" style="position: relative; right: 12vw; color: white">
 						<h2>Main types of tasks</h2>
 						<ul>
 							<li class="fragment">Classification</li>
@@ -81,7 +82,7 @@
 					<h2 style="position: relative; right: 7vw; bottom: 22vh;">How do machines learn?</h2>
 				</section>
 				<section data-background="src/imgs/killers.jpg">
-					<div style="width: 600px; position: relative; left: 25vw; text-align: left;">
+					<div style="width: 700px; position: relative; left: 20vw; text-align: left;">
 						<p class="fragment">Company sells destroyer-robots.</p>
 						<p class="fragment">What peple thinking about us in social networks</p>
 					</div>
@@ -125,7 +126,9 @@
 								<img src="src/imgs/neighbour.jpg" height="100px" width="100px" alt="">
 							</div>
 							<div class="description">
-								&ldquo;Thank you very much! This is exactly what I was looking for, the quality is excellent! My neighbor will no longer bother me. The only negative is that it burned the floor of the area, with my house too.&ldquo;
+								&ldquo;Thank you very much! This is exactly what I was looking for, the quality is
+								excellent! My neighbor will no longer bother me. The only negative is that it burned the
+								floor of the area, with my house too.&ldquo;
 							</div>
 						</div>
 						<div class="comment fragment">
@@ -136,23 +139,24 @@
 								<img src="src/imgs/pit.jpg" height="100px" width="100px" alt="">
 							</div>
 							<div class="description" style="padding-top: 30px;">
-								&ldquo;Terrible quality! It does not understand my orders, I advise you to avoid this manufacturer. I have got my money back, thanks for that!&ldquo;
+								&ldquo;Terrible quality! It does not understand my orders, I advise you to avoid this
+								manufacturer. I have got my money back, thanks for that!&ldquo;
 							</div>
 						</div>
 					</div>
 				</section>
 
 				<section>
-					<h2>Model</h2> 
+					<h2>Model</h2>
 					<h5 class="fragment">Bag of words</h5>
 					<div class="fragment" style="display: flex">
-						<div style="margin-right: 100px">
-							<ol style="list-style-type: none;">
-								<li>1. very        (1, 0, 0, 0, 0, ... 0)</li>
-								<li>2. thank       (0, 1, 0, 0, 0, ... 0)</li>
-								<li>3. excellent   (0, 0, 1, 0, 0, ... 0)</li>
-								<li>4. avoid       (0, 0, 0, 1, 0, ... 0)</li>
-								<li>5. terrible    (0, 0, 0, 0, 1, ... 0)</li>
+						<div style="margin-right: 50px;">
+							<ol style="list-style-type: none; font-size: 30px;">
+								<li>1. very (1, 0, 0, 0, 0, ... 0)</li>
+								<li>2. thank (0, 1, 0, 0, 0, ... 0)</li>
+								<li>3. excellent (0, 0, 1, 0, 0, ... 0)</li>
+								<li>4. avoid (0, 0, 0, 1, 0, ... 0)</li>
+								<li>5. terrible (0, 0, 0, 0, 1, ... 0)</li>
 								<li>...</li>
 								<li>1000. negative (0, 0, 0, 0, 0, ... 1)</li>
 							</ol>
@@ -162,7 +166,7 @@
 				</section>
 
 				<section>
-					<div style="display: flex; position: relative; right: 8vw; justify-content: space-around;">
+					<div style="display: flex;  justify-content: space-around;">
 						<div style="margin-right: 50px; width: 35vw;">
 							<div>
 								<p> &ldquo;<span style="color: green">Thank</span> you <span
@@ -175,34 +179,39 @@
 									that he burned the floor of the area, with my house too.&ldquo;
 								</p>
 							</div>
-							<div class="fragment count" style="text-align: center;">
-								<p>(0, 1, 0, 0, 0, 0, ... 0) Thank</p>
+							<div class="fragment count" style="display: flex; flex-direction: column; justify-content: space-around; align-items: center;">
+								<p>[ 0, 1, 0, 0, 0, 0, ... 0 ] Thank</p>
 								<span>+</span>
-								<p>(1, 0, 0, 0, 0, 0, ... 0) very</p>
+								<p>[ 1, 0, 0, 0, 0, 0, ... 0 ] very</p>
 								<span>+</span>
-								<p>(0, 0, 1, 0, 0, 0, ... 0) excellent</p>
+								<p>[ 0, 0, 1, 0, 0, 0, ... 0 ] excellent</p>
 								<span>+</span>
-								<p>(0, 0, 0, 0, 0, 0, ... 1) negative</p>
+								<p>[ 0, 0, 0, 0, 0, 0, ... 1 ] negative</p>
 								<span>=</span>
-								<p>(1, 1, 1, 0, 0, 0, ... 1)</p>
+								<div class="bordered" >
+									<p>[ 1, 1, 1, 0, 0, 0, ... 1 ]</p>
+								</div>
 							</div>
 						</div>
 						<div style="width: 35vw;">
-							<div style="margin-bottom: 60px;">
-								<p> &ldquo;<span style="color: red">Terrible</span> quality!It   	 does not understand what I order
+							<div style="margin-bottom: 60px; margin-bottom: 100px;">
+								<p> &ldquo;<span style="color: red">Terrible</span> quality!It does not understand what
+									I order
 									him! I advise you to <span style="color: red">avoid</span>
 									this manufacturer. <span style="color: green">Thank</span> you for refund money at
 									least!&ldquo;
 								</p>
 							</div>
-							<div class="fragment count" style="text-align: center;">
-								<p>(0, 0, 0, 0, 0, 1, ... 0) Terrible</p>
+							<div class="fragment count" style="display: flex; flex-direction: column; align-items: center;">
+								<p>[ 0, 0, 0, 0, 0, 1, ... 0 ] Terrible</p>
 								<span>+</span>
-								<p>(0, 0, 0, 0, 1, 0, ... 0) avoid</p>
+								<p>[ 0, 0, 0, 0, 1, 0, ... 0 ] avoid</p>
 								<span>+</span>
-								<p>(0, 1, 0, 0, 0, 0, ... 0) Thank</p>
+								<p>[ 0, 1, 0, 0, 0, 0, ... 0 ] Thank</p>
 								<span>=</span>
-								<p>(0, 1, 0, 0, 1, 1, ... 0)</p>
+								<div class="bordered" >
+									<p>[ 0, 1, 0, 0, 1, 1, ... 0 ]</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -221,7 +230,8 @@
 				</section>
 				<section>
 					<section>
-						<div style="display: flex; justify-content: space-between; position: relative; right: 8vw; padding-top: 150px;">
+						<div
+							style="display: flex; justify-content: space-between; padding-top: 150px;">
 							<div>
 								<h2>Loss function</h2>
 								<ul>
@@ -231,8 +241,9 @@
 									<li class="fragment fade-right">Exponential</li>
 								</ul>
 							</div>
-							<i class="fas fa-arrow-right fragment" style="position: relative; top: 50px;"></i>
-							<div class="fragment fade-left" style="display: flex; flex-direction: column; align-items: center;">
+							<i class="fas fa-arrow-right fragment" style="position: relative; top: 50px; font-size: 40px"></i>
+							<div class="fragment fade-left"
+								style="display: flex; flex-direction: column; align-items: center;">
 								<h2 class="Learning-function">Learning function</h2>
 								<ul class="fragment">
 									<li>Stohastic gradient descent</li>
@@ -254,8 +265,8 @@
 				</section>
 			</section>
 			<section data-background="src/imgs/types.jpg">
-				<div style="position: relative; left: 10vw; top: 5vh; color: black;">
-					<h2 style="color: black;">Types of machine learning:</h2>
+				<div style="position: relative; left: 10vw; color: black;">
+					<h4 style="color: black;">Types of machine learning:</h4>
 					<ol>
 						<li class="fragment">Supervised learning</li>
 						<li class="fragment">Unsupervised learning</li>
@@ -266,7 +277,7 @@
 				</div>
 			</section>
 			<section data-background="src/imgs/start.jpg">
-				<div style="position: relative; left: -15vw;">
+				<div style="position: relative; left: -10vw;">
 					<h4>Features of machine learning</h4>
 					<ol>
 						<li style="margin-bottom: 10px" class="fragment">The model is already contained in the data
@@ -277,8 +288,8 @@
 				</div>
 			</section>
 			<section data-background="src/imgs/city.jpg">
-				<h2>Application of machine learning</h2>
-				<div style="display: flex; justify-content: space-around;">
+				<h3>Application of machine learning</h3>
+				<div style="display: flex; justify-content: space-around; width: 1200px; position: relative; right: 6vw;">
 					<div style="display: flex;">
 						<div style="margin-right: 60px;">
 							<ul style="text-align: left">
@@ -302,12 +313,14 @@
 			</section>
 			<section data-background="src/imgs/reading.jpg">
 				<div style="color: black;">
-					<h2 style="color: black; position: relative; right: 20vw; display: flex; flex-direction: column; align-items: left;">Useful links</h2>
+					<h3 class="fade-right" style="color: black; position: relative; right: 15vw; display: flex; flex-direction: column; align-items: left;">
+						Useful links
+					</h3>
 					<ul style="display: block;">
 						<li>
 							<a href="https://techdevguide.withgoogle.com/paths/machine-learning/featured/ml-crash-course">
-							<span>Guide</span>	
-							</a> 
+								<span>Guide</span>
+							</a>
 						</li>
 						<li>
 							<a href="https://vas3k.ru/blog/machine_learning/"><span>Article</span></a>
@@ -317,7 +330,7 @@
 						</li>
 					</ul>
 				</div>
-				
+
 			</section>
 			<section data-background="src/imgs/term.jpg">
 				<h2>Thanks for watching!</h2>
